@@ -1,3 +1,3 @@
-![Khangvum Lab Banner](../assets/banner-1.jpg) 
+![Khangvum Lab Banner](../assets/banner.jpg) 
 
 # Khangvum Lab
