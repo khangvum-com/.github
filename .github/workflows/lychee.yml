@@ -1,0 +1,24 @@
+name: Lychee Link Checker
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * 0' # Weekly check on Sundays
+
+jobs:
+  link-checker:
+    name: Check Markdown Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+
+      - name: Run Lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress '**/*.md'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Authenticates calls to prevent rate limits
