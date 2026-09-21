@@ -1,0 +1,12 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  scan:
+    uses: khangvum-com/.github/.github/workflows/gitleaks.yml@main
+    secrets: inherit
